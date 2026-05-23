@@ -31,11 +31,9 @@ This project is a simple Task Management API built using **NestJS, Prisma, and P
 ## 1. Clone the repository
 
 ```bash
-<<<<<<< HEAD
+
 git clone https://github.com/dorcax/backend-skill-assessment.git
-=======
-git clone <your-repo-url>
->>>>>>> a9fa39299a0cc920d503fb20c9b7970ead8f0050
+
 cd backend-gt-assessment
 ```
 
@@ -151,7 +149,7 @@ PATCH /tasks/1
 
 ## update Task status
 ```bash 
-PATCH /tasks/1
+PATCH /tasks/1/status
 ```  
 ## Resquest Response 
 ```bash 
