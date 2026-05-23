@@ -70,7 +70,7 @@ export class TaskService {
   // update task
   async update(
     id: number,
-    updateTaskDto: UpdateTaskDto,
+    updateTaskDto: CreateTaskDto,
     currentUserId: number,
   ) {
     try {
