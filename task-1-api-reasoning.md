@@ -6,10 +6,12 @@ Before creating an order, I would first use a DTO to validate the incoming reque
 
 For example:
 
-- userId should not be empty and must be valid
-- items should not be empty
+- userId should not be empty and must be valid integer 
+ 
+- items array  should not be empty 
 
-- productId should be provided for each item
+- productId  of each item in the items array should be provided  
+- product quantity should be greater than zero less than the total quantity in stock 
 
 This help to ensure that invalid data does not reach the database.
 
@@ -18,7 +20,7 @@ This help to ensure that invalid data does not reach the database.
 ## Service Logic Validation 
 
 After confirming the request data is valid, I would then handle the business logic validation inside the service layer.
-The checks which i will perform include
+The checks which i will perform include the following:
 
 - Check if the user making the order exists in the database
 - Check if each product in the items list exists
@@ -26,7 +28,7 @@ The checks which i will perform include
 - Check if there is enough stock for the requested quantity
 - Prevent duplicate products in the same order request
 
-These validations are important because even if the request format is correct, the order should not be processed if business rules are violated.
+These validations are important because even if the request format  is correct, the order should not be processed if business rules are violated.
 
 ---
 
@@ -40,7 +42,7 @@ Some possible errors that could happen during the process include:
 - Product is out of stock
 - Invalid quantity value
 - Duplicate products in the order list
-- Server or database error while saving the order
+- Server  error while saving the order
 
 ---
 

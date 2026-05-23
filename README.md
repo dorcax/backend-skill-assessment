@@ -75,12 +75,12 @@ POST /tasks
 ## Request Response  
 ```bash 
 {
-  "id": "a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2",
+  "id": "1",
   "title": "Complete assessment",
   "priority": "high",
   "status": "pending",
-  "assignedToId": "c2b1f3a0-9d2e-4c8a-9b1a-7f3d9c2a1e88",
-  "assignedById": "b11d9a20-8c3f-4a5d-91aa-2c9f8e7d1234",
+  "assignedToId": "2",
+  "assignedById": "1",
   "createdAt": "2026-05-23T10:00:00.000Z"
 }
 ```
@@ -93,13 +93,13 @@ GET /tasks
 ```bash 
 [
   {
-    "id": "a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2",
+    "id": "1",
     "title": "Complete assessment",
     "priority": "high",
     "status": "pending",
     "a
-    ssignedToId": "c2b1f3a0-9d2e-4c8a-9b1a-7f3d9c2a1e88",
-    "assignedById": "b11d9a20-8c3f-4a5d-91aa-2c9f8e7d1234",
+    ssignedToId": "2",
+    "assignedById": "1",
     "createdAt": "2026-05-23T10:00:00.000Z"
   }
 ]
@@ -108,19 +108,19 @@ GET /tasks
 
 ## Get Task
 ```bash 
-GET /tasks/a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2
+GET /tasks/1
 ```  
 ## Resquest Response 
 ```bash 
 
   {
-    "id": "a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2",
+    "id": "1",
     "title": "Complete assessment",
     "priority": "high",
     "status": "pending",
     "a
-    ssignedToId": "c2b1f3a0-9d2e-4c8a-9b1a-7f3d9c2a1e88",
-    "assignedById": "b11d9a20-8c3f-4a5d-91aa-2c9f8e7d1234",
+    ssignedToId": "2",
+    "assignedById": "1",
     "createdAt": "2026-05-23T10:00:00.000Z"
   }
 
@@ -129,19 +129,19 @@ GET /tasks/a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2
 
 ## Update  Task
 ```bash 
-PATCH /tasks/a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2
+PATCH /tasks/1
 ```  
 ## Resquest Response 
 ```bash 
 
   {
-    "id": "a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2",
+    "id": "1",
     "title": "Complete assessment",
     "priority": "medium",
     "status": "pending",
     "a
-    ssignedToId": "c2b1f3a0-9d2e-4c8a-9b1a-7f3d9c2a1e88",
-    "assignedById": "b11d9a20-8c3f-4a5d-91aa-2c9f8e7d1234",
+    ssignedToId": "2",
+    "assignedById": "1",
     "createdAt": "2026-05-23T10:00:00.000Z"
   }
 
@@ -151,19 +151,19 @@ PATCH /tasks/a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2
 
 ## update Task status
 ```bash 
-PATCH /tasks/a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2
+PATCH /tasks/1
 ```  
 ## Resquest Response 
 ```bash 
 
   {
-    "id": "a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2",
+    "id": "1",
     "title": "Complete assessment",
     "priority": "high",
     "status": "in_progress",
     "a
-    ssignedToId": "c2b1f3a0-9d2e-4c8a-9b1a-7f3d9c2a1e88",
-    "assignedById": "b11d9a20-8c3f-4a5d-91aa-2c9f8e7d1234",
+    ssignedToId": "2",
+    "assignedById": "1",
     "createdAt": "2026-05-23T10:00:00.000Z"
   }
 
@@ -174,7 +174,7 @@ PATCH /tasks/a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2
 
 ## Unassign  Task
 ```bash 
-PATCH /tasks/a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2/unassign
+PATCH /tasks/1/unassign
 ```  
 ## Resquest Response 
 ```bash 
@@ -188,7 +188,7 @@ PATCH /tasks/a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2/unassign
 
 ## Delete Task
 ```bash 
-DELETE /tasks/a91c2f10-3d8e-4f2a-bb21-7a9d8c3e11f2
+DELETE /tasks/1
 ```  
 ## Resquest Response 
 ```bash 
