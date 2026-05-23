@@ -6,19 +6,19 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(
-  new ValidationPipe({
-    whitelist: true,
-    forbidNonWhitelisted: true,
-    transform: true,
-  }),
-);
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+      transform: true,
+    }),
+  );
 
- // Swagger config
+  // Swagger config
   const config = new DocumentBuilder()
     .setTitle('Task Management API')
     .setDescription('API documentation for task management system')
     .setVersion('1.0')
-    .addBearerAuth()
+   
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

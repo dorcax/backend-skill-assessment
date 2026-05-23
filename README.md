@@ -73,12 +73,12 @@ POST /tasks
 ## Request Response  
 ```bash 
 {
-  "id": "1",
+  "id": 1,
   "title": "Complete assessment",
   "priority": "high",
   "status": "pending",
-  "assignedToId": "2",
-  "assignedById": "1",
+  "assignedToId": 2,
+  "assignedById": 1,
   "createdAt": "2026-05-23T10:00:00.000Z"
 }
 ```
@@ -91,13 +91,13 @@ GET /tasks
 ```bash 
 [
   {
-    "id": "1",
+    "id": 1,
     "title": "Complete assessment",
     "priority": "high",
     "status": "pending",
     "a
-    ssignedToId": "2",
-    "assignedById": "1",
+    ssignedToId": 2,
+    "assignedById": 1,
     "createdAt": "2026-05-23T10:00:00.000Z"
   }
 ]
@@ -112,13 +112,13 @@ GET /tasks/1
 ```bash 
 
   {
-    "id": "1",
+    "id": 1,
     "title": "Complete assessment",
     "priority": "high",
     "status": "pending",
     "a
-    ssignedToId": "2",
-    "assignedById": "1",
+    ssignedToId": 2,
+    "assignedById": 1,
     "createdAt": "2026-05-23T10:00:00.000Z"
   }
 
@@ -133,13 +133,13 @@ PATCH /tasks/1
 ```bash 
 
   {
-    "id": "1",
+    "id": 1,
     "title": "Complete assessment",
     "priority": "medium",
     "status": "pending",
     "a
-    ssignedToId": "2",
-    "assignedById": "1",
+    ssignedToId": 2,
+    "assignedById": 1,
     "createdAt": "2026-05-23T10:00:00.000Z"
   }
 
@@ -155,13 +155,13 @@ PATCH /tasks/1/status
 ```bash 
 
   {
-    "id": "1",
+    "id": 1,
     "title": "Complete assessment",
     "priority": "high",
     "status": "in_progress",
     "a
-    ssignedToId": "2",
-    "assignedById": "1",
+    ssignedToId": 2,
+    "assignedById": 1,
     "createdAt": "2026-05-23T10:00:00.000Z"
   }
 
