@@ -1,5 +1,5 @@
 import { TaskPriority } from '@prisma/client';
-import { IsString, IsEnum } from 'class-validator';
+import { IsString, IsEnum, IsNumber } from 'class-validator';
 
 export class CreateTaskDto {
   @IsString()
@@ -8,8 +8,7 @@ export class CreateTaskDto {
   @IsEnum(TaskPriority)
   priority: TaskPriority;
 
-  @IsString()
-  assignedToId: string;
+  @IsNumber()
+  assignedToId: number;
+ 
 }
-
-

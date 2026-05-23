@@ -23,7 +23,7 @@ enum TaskStatus {
 }
 
 model User {
-  id              String      @id @default(uuid())
+  id              Int      @id @default(autoincrement())
   name            String
 
   assignedTasks   Task[]   @relation("AssignedTasks")
@@ -33,14 +33,14 @@ model User {
 }
 
 model Task {
-  id            String      @id @default(uuid())
+  id            Int     @id @default(autoincrement())
   title         String
 
   priority      TaskPriority
   status        TaskStatus    @default(pending)
 
-  assignedToId  String?
-  assignedById  String
+  assignedToId  Int?
+  assignedById  Int
 
   assignedTo    User?         @relation( "AssignedTasks",fields: [assignedToId],references: [id])
 

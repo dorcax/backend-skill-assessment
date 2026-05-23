@@ -6,15 +6,18 @@ import {
 
 import { PrismaService } from 'src/services/prisma/prisma.service';
 import { CreateTaskDto } from './dto/create-task.dto';
-import { UpdateTaskDto } from './dto/update-task.dto';
+import { UpdateTaskDto, UpdateTaskStatusDto } from './dto/update-task.dto';
 
 @Injectable()
 export class TaskService {
   constructor(private readonly prisma: PrismaService) {}
 
   // create task 
-  async create(createTaskDto: CreateTaskDto, currentUserId:string) {
+  async create(createTaskDto: CreateTaskDto, currentUserId:number) {
     const { title, priority, assignedToId } = createTaskDto;
+  if (!currentUserId) {
+    throw new ForbiddenException('Missing user id');
+  }
 
     return await this.prisma.task.create({
       data: {
@@ -36,7 +39,7 @@ export class TaskService {
   }
 
   // find one task
-  async findOne(id: string) {
+  async findOne(id:number) {
     const task = await this.prisma.task.findUnique({
       where: { id },
     });
@@ -49,7 +52,7 @@ export class TaskService {
   }
 
   // update task
-  async update(id: string, updateTaskDto: UpdateTaskDto, currentUserId: string) {
+  async update(id: number, updateTaskDto: UpdateTaskDto, currentUserId: number){
     const task = await this.findOne(id);
 
     if (task.assignedById !== currentUserId) {
@@ -63,7 +66,7 @@ export class TaskService {
   }
 
   // update status 
-  async updateStatus(id: string, updateTaskDto: UpdateTaskDto, currentUserId: string) {
+  async updateStatus(id:number, updateTaskStatusDto: UpdateTaskStatusDto, currentUserId:number) {
     const task = await this.findOne(id);
 
     if (task.assignedToId !== currentUserId) {
@@ -72,12 +75,12 @@ export class TaskService {
 
     return await this.prisma.task.update({
       where: { id },
-      data: { status: updateTaskDto.status },
+      data: { status: updateTaskStatusDto.status },
     });
   }
 
   // unassign task to user 
-  async unassign(id: string, currentUserId: string) {
+  async unassign(id: number , currentUserId:number) {
   const task = await this.findOne(id);
 
   if (task.assignedById !== currentUserId) {
@@ -98,7 +101,7 @@ export class TaskService {
 
 
   // delete task
-  async remove(id: string, currentUserId: string) {
+  async remove(id: number, currentUserId: number) {
     const task = await this.findOne(id);
 
     if (task.assignedById !== currentUserId) {

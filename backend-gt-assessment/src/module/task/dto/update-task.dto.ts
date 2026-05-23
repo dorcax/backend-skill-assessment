@@ -4,6 +4,10 @@ import { TaskStatus } from '@prisma/client';
 import { IsEnum } from 'class-validator';
 
 export class UpdateTaskDto extends PartialType(CreateTaskDto) {
+   
+}
+
+export class UpdateTaskStatusDto {
     @IsEnum(TaskStatus)
     status: TaskStatus;
 }
